@@ -8,7 +8,7 @@ function ondraw()
 
   for _, m in ipairs(hand:barks()) do
     if m:type() == "chii" then
-      seqheads[#seqheads + 1] = m[0]
+      seqheads[#seqheads + 1] = m[1]
     end
   end
 
@@ -140,7 +140,7 @@ function onedragtwo(mount, closed, head)
     if 0 < dist1 and dist1 <= 3 then
       for _, v in ipairs({ 1, 4, 7 }) do
         if v ~= head:val() then
-          thinFill(mount, closed, T34.new(head:suit(), v))
+          thinfill(mount, closed, T34.new(head:suit(), v))
         end
       end
     end
@@ -151,7 +151,7 @@ end
 function thinfill(mount, closed, head)
   for _, t in ipairs({ head, head:next(), head:nnext() }) do
     if closed:ct(t) == 0 then
-      mount:lightA(t, 600)
+      mount:lighta(t, 600)
     end
   end
 end

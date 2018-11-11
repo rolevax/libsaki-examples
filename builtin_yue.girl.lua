@@ -125,7 +125,7 @@ end
 function countguest(hand, guest)
   local barks = hand:barks()
   for _, bark in ipairs(barks) do
-    if bark:type() == "ankan" and guest == m[0] then
+    if bark:type() == "ankan" and guest == bark[1] then
       return 4
     end
   end
