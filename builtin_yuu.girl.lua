@@ -17,9 +17,9 @@ powers = {
 }
 
 function onmonkey()
-  for tars, mk in powers do
-    for _, t in tars do
-      exists[self:index()].incmk(T34.new(t), mk)
+  for tars, mk in pairs(powers) do
+    for _, t in ipairs(tars) do
+      exists[self:index()]:incmk(T34.new(t), mk)
     end
   end
 end
@@ -29,8 +29,8 @@ function ondraw()
     return
   end
 
-  for tars, mk in powers do
-    for _, t in tars do
+  for tars, mk in pairs(powers) do
+    for _, t in ipairs(tars) do
       mount:lighta(T34.new(t), mk)
     end
   end
