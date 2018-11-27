@@ -46,7 +46,7 @@ function tomobiki(mount, game, who)
     for _, t in ipairs(myhand:effa4()) do
       if myhand:canpon(t) then
         if not giftset[t:id34()] then
-          mount.lightA(t, 1000);
+          mount:lighta(t, 1000);
         end
       end
     end
